@@ -4,7 +4,6 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
 # Heroku should use this version of Ruby
 ruby '2.4.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -17,6 +16,9 @@ gem 'sqlite3', group: [:development, :test]
 gem 'pg', group: :production
 #12 factor for heroku
 gem 'rails_12factor', group: :production
+
+# stripe for taking payments
+gem 'stripe', :git =>'https://github.com/stripe/stripe-ruby'
 
 # add twitter bootstrap
 gem 'bootstrap-sass'
